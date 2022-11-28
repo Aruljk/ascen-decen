@@ -18,14 +18,13 @@
 </body>
 <script>
     const call=()=>{
-        let overall=""
         let value1=parseInt(document.getElementById("input1").value)
         let value2=parseInt(document.getElementById("input2").value)
         let value3=parseInt(document.getElementById("input3").value)
         let value4=document.getElementById("val")
 
-        if(value1>value2&&value2>value3){
-            if(value1>value2){
+        if(value1>value2&&value1>value3){
+            if(value2>value3){
                 value4.innerText=value3+","+value2+","+value1
                 console.log(value3,value2,value1);
             }
@@ -35,12 +34,12 @@
             }
         }
         if(value2>value1&&value2>value3){
-            if(value2>value3){
+            if(value1>value3){
                 value4.innerText=value3+","+value1+","+value2
                 console.log(value3,value1,value2);
             }
             else{
-                value4.innerText=value1+","+value2+","+value1
+                value4.innerText=value1+","+value3+","+value2
                 console.log(value1,value3,value2); 
             }
         }
