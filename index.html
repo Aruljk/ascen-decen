@@ -5,16 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #div1{
+            display: none;
+        }
+        #div2{
+            display: none;
+        }
+        #div3{
+            display: none;
+        }
+        .firstdiv{
+            text-align: center;
+            padding: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h1>ascending</h1>
-    <br>
-    <br>
-    <input id="input1" type="text">
-    <input id="input2" type="text">
-    <input id="input3" type="text">
-    <button onclick="call()">check</button>
-    <h3 id="val"></h3>
+    <h1 style="text-align: center;">Project</h1>
+    <div class="firstdiv">
+        
+            <button onclick="callbtn1()">Asc/Dsc</button>
+            <button onclick="callbtn2()">InBetween</button>
+            <button onclick="callbtn3()">Odd/Even</button>
+            <buttton onclick="callbtn4()">delete</buttton>
+        
+    </div>
+    <div id="div1">
+        <input id="input1" type="text">
+        <input id="input2" type="text">
+        <input id="input3" type="text">
+        <button onclick="call()">ascending</button>
+        <button onclick="call2()">decending</button>
+        <h3 id="val"></h3>
+    </div>
+    <div id="div2">
+        <input id="input4" type="text"/>
+        <input id="input5" type="text"/>
+        <button onclick="call3()">Find</button>
+    </div>
+    <div id="div3">
+        <input id="input4" type="text"/>
+        <input id="input5" type="text"/>
+        <button onclick="call3()">Even</button>
+        <button onclick="call3()">Odd</button>
+    </div>
+    <div class="div4">
+        <input id="input4" type="text"/>
+        <button onclick="call()">delete</button>
+
+    </div>
 </body>
 <script>
     const call=()=>{
@@ -55,5 +95,64 @@
         }
 
     }
+    const call2=()=>{
+        let value1=parseInt(document.getElementById("input1").value)
+        let value2=parseInt(document.getElementById("input2").value)
+        let value3=parseInt(document.getElementById("input3").value)
+        let value4=document.getElementById("val")
+
+        if(value1<value2&&value1<value3){
+            if(value2<value3){
+                value4.innerText=value3+","+value2+","+value1
+                console.log(value3,value2,value1);
+            }
+            else{
+                value4.innerText=value2+","+value3+","+value1
+                console.log(value2,value3,value1); 
+            }
+        }
+        if(value2<value1&&value2<value3){
+            if(value1<value3){
+                value4.innerText=value3+","+value1+","+value2
+                console.log(value3,value1,value2);
+            }
+            else{
+                value4.innerText=value1+","+value3+","+value2
+                console.log(value1,value3,value2); 
+            }
+        }
+        if(value3<value1&&value3<value2){
+            if(value2<value1){
+                value4.innerText=value1+","+value2+","+value3
+                console.log(value1,value2,value3);
+            }
+            else{
+                value4.innerText=value2+","+value1+","+value3
+                console.log(value2,value1,value3); 
+            }
+        }
+    }
+
+    const callbtn1=()=>{
+        document.getElementById("div1").style.display="block";
+        document.getElementById("div1").style.textAlign="center";
+        document.getElementById("div2").style.display="none";
+        document.getElementById("div3").style.display="none";
+    }
+            
+    const callbtn2=()=>{
+        document.getElementById("div2").style.display="block";
+        document.getElementById("div2").style.textAlign="center";
+        document.getElementById("div1").style.display="none";
+        document.getElementById("div3").style.display="none";
+    }
+     
+    const callbtn3=()=>{
+        document.getElementById("div3").style.display="block";
+        document.getElementById("div3").style.textAlign="center";
+        document.getElementById("div1").style.display="none";
+        document.getElementById("div2").style.display="none";
+    }
+
 </script>
 </html>
