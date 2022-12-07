@@ -28,7 +28,7 @@
             <button onclick="callbtn1()">Asc/Dsc</button>
             <button onclick="callbtn2()">InBetween</button>
             <button onclick="callbtn3()">Odd/Even</button>
-            <buttton onclick="callbtn4()">delete</buttton>
+           
         
     </div>
     <div id="div1">
@@ -42,21 +42,25 @@
     <div id="div2">
         <input id="input4" type="text"/>
         <input id="input5" type="text"/>
-        <button onclick="call3()">Find</button>
+        <button onclick="inbetween()">Find</button>
     </div>
     <div id="div3">
-        <input id="input4" type="text"/>
-        <input id="input5" type="text"/>
-        <button onclick="call3()">Even</button>
-        <button onclick="call3()">Odd</button>
-    </div>
-    <div class="div4">
-        <input id="input4" type="text"/>
-        <button onclick="call()">delete</button>
+        <input id="input6" type="text"/>
+        <input id="input7" type="text"/>
+         <button onclick="even()">Even</button>
+        <button onclick="odd()">Odd</button>
 
-    </div>
+    </div> 
+    
 </body>
 <script>
+
+
+
+
+
+
+// div1//
     const call=()=>{
         let value1=parseInt(document.getElementById("input1").value)
         let value2=parseInt(document.getElementById("input2").value)
@@ -132,12 +136,59 @@
             }
         }
     }
+    // div2
+const inbetween=()=>{
+    let value8=parseInt(document.getElementById("input4").value)
+        let value9=parseInt(document.getElementById("input5").value)
+        let div=document.getElementById("div2")
+        
 
+        for(let i=value8; i<=value9; i++){  
+            let val2=document.createElement("h1")
+            val2.innerText=i
+            div.append(val2)
+        }
+
+
+}
+
+const even=()=>{
+    let start=parseInt(document.getElementById("input6").value)
+    let end=parseInt(document.getElementById("input7").value)
+    let div5=document.getElementById("div3")
+
+    for(let j=start;j<=end;j++){
+        
+     if(j%2==0){
+        let val3=document.createElement("h1")
+        val3.innerText=j
+        div5.append(val3)
+
+     }   
+    }
+}
+const odd=()=>{
+    let start=parseInt(document.getElementById("input6").value)
+    let end=parseInt(document.getElementById("input7").value)
+    let div5=document.getElementById("div3")
+
+    for(let j=start;j<=end;j++){
+        
+     if(j%2==1){
+        let val4=document.createElement("h2")
+        val4.innerText=j
+        div5.append(val4)
+
+     }   
+    }
+    console.log(start,end);
+}
     const callbtn1=()=>{
         document.getElementById("div1").style.display="block";
         document.getElementById("div1").style.textAlign="center";
         document.getElementById("div2").style.display="none";
-        document.getElementById("div3").style.display="none";
+        document.getElementById("div3").style.display="none"; 
+        document.getElementById("div4").style.display="none";
     }
             
     const callbtn2=()=>{
